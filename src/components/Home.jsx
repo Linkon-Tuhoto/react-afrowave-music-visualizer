@@ -4,6 +4,7 @@ import { FaPlay, FaMusic } from 'react-icons/fa';
 import { IoIosPulse } from 'react-icons/io';
 import { motion } from 'framer-motion';
 import { useEffect, useState} from 'react';
+import { fetchSongs } from '../api/music';
 
 
 
