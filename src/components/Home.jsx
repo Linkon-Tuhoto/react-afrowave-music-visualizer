@@ -80,6 +80,36 @@ function Home() {
       </div>
     </div>
     </div>
+
+    <div className='mt-10 w-full '>
+      <div>
+      <h2 className='text-2xl font-bold text-white mb-6'>Trending Songs</h2>
+      <div className='relative overflow-hidden'>
+        
+      <div className='w-full ' >
+      <div className='flex gap-6 py-2  pb-4' >
+        {songs.map(song => (
+          <div key={song.id} className='bg-gray-800/50 backdrop-blur-sm border  border-cyan-400/30 rounded-lg p-6 hover:bg-cyan-400/10 min-w-[220px] max-w-[220px] h-[340px] flex-shrink-0 hover:scale-[1.02] transition' >
+            <img src={song.image} alt={song.title} className='w-full h-auto rounded-md mb-4' />
+            <h3 className='text-lg font-bold text-white'>{song.title}</h3>
+            <p className='text-gray-400'>{song.artist}</p>
+            <button onClick={() => setCurrentSong(song.audio)} className='w-full py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full hover:scale-105 transition cursor-pointer'>
+              Play
+            </button>
+          </div>
+        ))}
+        
+      </div>
+      </div>
+ 
+      </div>
+
+ 
+    </div>
+    {currentSong && (
+      <audio src={currentSong} autoPlay controls className='fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900/80 backdrop-blur-lg border border-cyan-400/30 rounded-full p-2 shadow-lg z-50' />
+    )}
+    </div>
     </div>
   )
 }
